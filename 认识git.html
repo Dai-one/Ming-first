@@ -24,7 +24,37 @@
     【注】如果你当前工作区代码有改动，和暂存区的版本不一致
         《1》git add 文件名
             git commit -m "" (这两个命令是配套使用的)
-            
+        《2》git checkout 文件名  回复到没改之前的状态
+    6.查看工作区和暂存区代码的区别    
+        git diff
+    7.查看已经提交的历史版本
+        git log
+    8.回溯到之前的任意一个版本
+        git reset --hard HEAD^ 退回到上一个版本
+        git reset --hard HEAD^^ 退回到上上个版本
+        git reset --hard 版本号  退回到指定版本
+    【注】这个行为不可逆
+    9.我们需要在github，注册这台电脑，你才有权力进行提交。
+    生成密匙
+        ssh-keygen -t rsa -C "git邮箱" 一路敲回车下去
+        【注】查找ssh密匙的时候，一定要你的电脑隐藏文件可见
+        windows:C盘 =》用户=》用户名=》.ssh文件夹 =》id_rsa.pub
+
+        复制 id_rsa.pub密匙 =》github 上设置
+    10.将暂存区的数据，直接推送到远程仓库去
+        git remote add origin 你仓库的地址(只有第一次推送才需要设置地址)
+        git push -u origin master
+    11.后续开发的时候
+        git add *
+        git commit -m ""
+        git push
+    12.有别的同学想开发项目，大家第一天上班
+    老板会提供一个github/gitee的仓库地址
+    可以通过地址直接将当前的项目拷贝到你的电脑上
+    git clone 仓库地址
+    13.本地的项目和远程仓库的项目版本不一致
+        将远程仓库的项目版本同步到本地
+        git pull
     */
 </script>
 <body>
